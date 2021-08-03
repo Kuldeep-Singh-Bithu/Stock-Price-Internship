@@ -40,7 +40,7 @@ def prediction():
     if request.method == "POST":
        news_headline = request.form.get("hdline")
        headline = basicvectorizer.transform([news_headline])
-       pred=model.predict(headline)
+       pred=model2.predict(headline)
        return render_template('prediction_page.html',headline=news_headline,Prediction=pred)
     # return render_template('webpage.html',predicted='Harsha')
     return render_template('webpage.html')

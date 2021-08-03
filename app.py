@@ -32,7 +32,7 @@ def predict():
     if(output==-1):
         return render_template('index.html', prediction_text='Stock Price will be going to decrease')
     elif(output==1):
-        return render_template('index.html', prediction_text='Stock Price will be going to increse')
+        return render_template('index.html', prediction_text='Stock Price will be going to increase')
 
 ####################################
 @app.route('/newspred',methods =["GET", "POST"])
@@ -41,6 +41,10 @@ def prediction():
        news_headline = request.form.get("hdline")
        headline = basicvectorizer.transform([news_headline])
        pred=model2.predict(headline)
+       if(pred==1):
+           pred="Stock price might increase";
+       else:
+           pred="Stock price might Decrease"
        return render_template('prediction_page.html',headline=news_headline,Prediction=pred)
     # return render_template('webpage.html',predicted='Harsha')
     return render_template('webpage.html')

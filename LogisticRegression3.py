@@ -49,6 +49,7 @@ print(df.head())
 
 # THERE WE BUILD OUR BUNDLE OF INDICATORS THAT WE ARE GOING TO USE AS INDEPENDENT VARIABLES
 # 20 Days Moving average
+
 df["S_20"]=df["Close/Last"].rolling(window=20).mean()
 # What rolling() does :
 # Calculate the moving average. That is, take the first 20 values, average

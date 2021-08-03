@@ -37,6 +37,14 @@ X=s3.iloc[:,:]
 # Define Target/Dependent Variable
 
 y=np.where(s3["Close/Last"].shift(-1) < s3["Close/Last"],1,-1)
+# X['y']=X["Close/Last"].apply(lambda x: 1 if x.rolling(window=20).mean() < X["Close/Last"] else -1)
+# print(y)
+# print(np.unique(y))
+#
+# sx=pd.DataFrame(y)
+# print(sx.value_counts())
+# print(s3.describe())
+
 
 # Split The Dataset
 split=int(0.7*len(s3))

@@ -17,6 +17,7 @@ data=combined_headline["Headlines"]
 data.replace("[^a-zA-Z]"," ",regex=True,inplace=True)
 # Converting headlines to lower case
 data=data.str.lower()
+
 print(data.head())
 
 

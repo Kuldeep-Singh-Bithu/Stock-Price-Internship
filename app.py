@@ -1,6 +1,7 @@
 import numpy as np
 from flask import Flask, request, jsonify, render_template
 import pickle
+import sklearn
 
 app = Flask(__name__)
 # change  model1  to model
@@ -50,4 +51,4 @@ def prediction():
     return render_template('webpage.html')
 # @app.route('/predicted')
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=False)

@@ -50,4 +50,4 @@ def prediction():
     return render_template('webpage.html')
 # @app.route('/predicted')
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True,host='0.0.0.0')

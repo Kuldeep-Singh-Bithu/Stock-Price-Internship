@@ -1,46 +1,62 @@
 <!DOCTYPE html>
 <html >
-<!--From https://codepen.io/frytyler/pen/EGdtg-->
 <head>
   <meta charset="UTF-8">
-  <title>ML API</title>
-  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  <title>Stock Price Prediction And Forecasting</title>
+  <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+        <div class="header_menu">
+            <div class="logo">
+            	<img src="/static/img/logo.png" alt="Logo">
 
-</head>
+            </div>
+            <div class="menu_list">
+                <ul>
+                    <li><a href="https://github.com/Kuldeep-Singh-Bithu/Stock-Price-Internship.git">GITHUB</a> </li>
+                    <li><a href="https://github.com/Kuldeep-Singh-Bithu/Stock-Price-Internship.git">AboutUS</a> </li>
+                </ul>
+            </div>
+        </div>
+        <div class="header_content">
+            <h1> stock price prediction </h1>
+            <h3> The goal of the project is to predict price changes in the future for a given stock from numeric stock data and financial news headlines.</h3>
 
-<body>
- <div class="login">
-	<h1>Predict Stock Price</h1>
+            <h2>Enter Values</h2>
 
-     <!-- Main Input For Receiving Query to our ML -->
-    <form action="{{ url_for('predict')}}"method="post">
-    	<input type="number" step="any" name="Close/Last" placeholder="Close/Last" required="required" />
+            <form action="{{ url_for('predict')}}"method="post">
+        <input type="number" step="any" name="Close/Last" placeholder="Close/Last" required="required" />
         <input type="number" step="any" name="Open" placeholder="Open" required="required" />
-		<input type="number" step="any" name="High" placeholder="High" required="required" />
-		<input type="number" step="any" name="Low" placeholder="Low" required="required" />
-
-        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+        <input type="number" step="any" name="High" placeholder="High" required="required" />
+        <input type="number" step="any" name="Low" placeholder="Low" required="required" />
+        <div class="b">
+<button type="submit" class="btn btn-primary btn-block btn-large"><h4>Predict</h4></button>
+</div>
     </form>
+    <div>
+    <br>
+    <br>
+    <h2>
+     {{ prediction_text }}
+    </h2>
+    </div>
 
-   <br>
-   <br>
-   {{ prediction_text }}
+    <div>
+    <button id="myButton" class="float-left submit-button" ><h4>News Prediction </h4></button>
 
- </div>
-<div>
-  <button id="myButton" class="float-left submit-button" >News Prediction</button>
-
-<script type="text/javascript">
+   <script type="text/javascript">
     document.getElementById("myButton").onclick = function () {
         location.href = "/newspred";
     };
-</script>
-</div>
+    </script>
+    </div>
 
+
+        </div>
+
+    </header>
 
 </body>
 </html>
-

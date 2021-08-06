@@ -11,7 +11,6 @@ model2=pickle.load(pickle_in)
 basicvectorizer=pickle.load(open('vectorizer.pickle','rb'))
 
 
-
 @app.route('/')
 def home():
     return render_template('index.html')
